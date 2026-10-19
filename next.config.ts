@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  allowedDevOrigins: ["dev-my.sepidour1.ir"],
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
