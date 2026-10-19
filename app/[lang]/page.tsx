@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AboutPanel } from "@/components/about-panel";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 import { PostCard, ProjectCard, SectionHeading } from "@/components/portfolio-ui";
 import { ProfileCard } from "@/components/profile-card";
 import { Reveal } from "@/components/reveal";
@@ -7,7 +8,7 @@ import { localizedPath } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 
 export default async function Home() {
-  const { locale, home, common, projects, posts } = await getDictionary();
+  const { locale, home, common, experience, projects, posts } = await getDictionary();
 
   return (
     <>
@@ -20,6 +21,8 @@ export default async function Home() {
         </div>
       </section>
 
+      <ExperienceTimeline section={experience} />
+
       <section className="page-container py-24 md:py-32">
         <Reveal>
           <SectionHeading
@@ -29,8 +32,8 @@ export default async function Home() {
           />
         </Reveal>
         <div className="grid gap-12 md:grid-cols-2">
-          {projects.map((project) => (
-            <Reveal key={project.url}>
+          {projects.map((project, index) => (
+            <Reveal key={project.url} delay={(index % 2) * 150}>
               <ProjectCard project={project} viewSiteLabel={common.viewSite} />
             </Reveal>
           ))}
@@ -49,7 +52,7 @@ export default async function Home() {
           </Reveal>
           <div className="grid gap-4 md:grid-cols-2">
             {posts.slice(0, 2).map((post, index) => (
-              <Reveal key={post.title}>
+              <Reveal key={post.title} delay={index * 150}>
                 <PostCard
                   post={post}
                   href={localizedPath(locale, "/blog")}

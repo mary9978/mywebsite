@@ -8,6 +8,7 @@ export async function ProfileCard() {
   return (
     <aside
       aria-labelledby="profile-name"
+      data-aos="zoom-in"
       className="card-shadow relative mt-16 rounded-[2rem] bg-surface lg:sticky lg:top-28"
     >
       <div className="px-6 pb-6 text-center">
@@ -61,8 +62,13 @@ export async function ProfileCard() {
           ))}
         </dl>
 
-        <a href={site.resume} download className="button-primary mt-6 flex w-full shadow-lg">
-          <Icon name="download" />
+        <a
+          href={site.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button-primary mt-6 flex w-full shadow-lg"
+        >
+          <Icon name="file" />
           {profile.resume}
         </a>
       </div>

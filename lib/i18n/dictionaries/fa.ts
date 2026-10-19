@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { experienceFa } from "../experience/fa";
 import type { Dictionary } from "../types";
 
 export const fa: Dictionary = {
@@ -37,7 +38,7 @@ export const fa: Dictionary = {
     name: "مریم رضایی",
     initials: "م‌ر",
     role: "توسعه‌دهنده فرانت‌اند",
-    resume: "دریافت رزومه",
+    resume: "مشاهده رزومه",
     socialLabel: "شبکه‌های اجتماعی",
     aboutTitle: "درباره من",
     about: [
@@ -90,13 +91,6 @@ export const fa: Dictionary = {
     storyTitle: "میان طراحی دقیق، عملکرد بالا و کد قابل نگهداری تعادل می‌سازم.",
     storyText: "تمرکز من روی اکوسیستم React است؛ از معماری پروژه و ساخت کامپوننت‌های قابل استفاده مجدد تا مدیریت state، اتصال API و بهینه‌سازی Core Web Vitals.",
     storyCta: "با هم آشنا شویم",
-    experienceEyebrow: "تجربه",
-    experienceTitle: "مسیر حرفه‌ای من.",
-    experience: [
-      ["۱۴۰۳ — امروز", "توسعه‌دهنده ارشد فرانت‌اند", "همکاری مستقل"],
-      ["۱۴۰۱ — ۱۴۰۳", "توسعه‌دهنده React و Next.js", "تیم محصول"],
-      ["۱۳۹۹ — ۱۴۰۱", "توسعه‌دهنده رابط کاربری", "استودیو وب"],
-    ],
     skillsEyebrow: "توانمندی‌ها",
     skillsTitle: "ابزارهای مدرن، پایه‌های محکم.",
     skillsDescription: "تخصص اصلی من توسعه رابط‌های مقیاس‌پذیر با اکوسیستم React و ابزارهای مدرن فرانت‌اند است.",
@@ -153,6 +147,7 @@ export const fa: Dictionary = {
       successText: "حداکثر تا دو روز کاری آینده پاسخ می‌دهم.",
     },
   },
+  experience: experienceFa,
   projects: [
     {
       title: "Peyk",

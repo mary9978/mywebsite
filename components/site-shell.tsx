@@ -99,7 +99,7 @@ export async function SiteShell({ children }: SiteShellProps) {
       <main id="main-content">{children}</main>
 
       <footer className="bg-inverse text-on-inverse">
-        <div className="page-container grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="page-container grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr]" data-aos="fade-up">
           <div>
             <p className="mb-4 text-3xl font-black">
               {shell.footerTitle} <span className="text-lime">{shell.footerHighlight}</span>

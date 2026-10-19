@@ -7,14 +7,17 @@ interface SectionHeadingProps {
   readonly eyebrow: string;
   readonly title: string;
   readonly description?: string;
+  readonly id?: string;
 }
 
-export function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
+export function SectionHeading({ eyebrow, title, description, id }: SectionHeadingProps) {
   return (
     <div className="mb-10 grid gap-5 md:grid-cols-[1fr_1.4fr] md:items-end">
       <div>
         <p className="eyebrow">{eyebrow}</p>
-        <h2 className="section-title">{title}</h2>
+        <h2 id={id} className="section-title">
+          {title}
+        </h2>
       </div>
       {description ? (
         <p className="max-w-xl leading-8 text-ink/60 md:justify-self-end">{description}</p>
@@ -124,10 +127,14 @@ interface PageIntroProps {
 export function PageIntro({ intro }: PageIntroProps) {
   return (
     <section className="page-container py-16 md:py-24">
-      <p className="eyebrow">{intro.eyebrow}</p>
+      <p className="eyebrow" data-aos="fade-down">
+        {intro.eyebrow}
+      </p>
       <div className="grid gap-8 md:grid-cols-[1.5fr_1fr] md:items-end">
-        <h1 className="page-title">{intro.title}</h1>
-        <div>
+        <h1 className="page-title" data-aos="fade-up">
+          {intro.title}
+        </h1>
+        <div data-aos="fade-up" data-aos-delay="200">
           {intro.count ? <p className="mb-3 text-sm font-black text-coral">{intro.count}</p> : null}
           <p className="max-w-lg text-lg leading-9 text-ink/60">{intro.description}</p>
         </div>

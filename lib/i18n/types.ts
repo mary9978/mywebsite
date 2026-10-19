@@ -11,7 +11,7 @@ export type IconName =
   | "github"
   | "linkedin"
   | "telegram"
-  | "download";
+  | "file";
 
 export type Accent = "lime" | "coral" | "sky";
 
@@ -31,6 +31,25 @@ export interface Post {
   readonly date: string;
   readonly readTime: string;
   readonly tag: string;
+}
+
+export interface Experience {
+  readonly role: string;
+  readonly company: string;
+  readonly period: string;
+  readonly location?: string;
+  readonly description: string;
+  readonly stack: readonly string[];
+  readonly current?: boolean;
+}
+
+export interface ExperienceSection {
+  readonly eyebrow: string;
+  readonly title: string;
+  readonly description: string;
+  readonly currentLabel: string;
+  readonly emptyText: string;
+  readonly items: readonly Experience[];
 }
 
 export interface NavItem {
@@ -140,9 +159,6 @@ export interface Dictionary {
     readonly storyTitle: string;
     readonly storyText: string;
     readonly storyCta: string;
-    readonly experienceEyebrow: string;
-    readonly experienceTitle: string;
-    readonly experience: readonly (readonly [string, string, string])[];
     readonly skillsEyebrow: string;
     readonly skillsTitle: string;
     readonly skillsDescription: string;
@@ -171,6 +187,7 @@ export interface Dictionary {
     readonly details: readonly (readonly [string, string])[];
     readonly form: ContactFormText;
   };
+  readonly experience: ExperienceSection;
   readonly projects: readonly Project[];
   readonly posts: readonly Post[];
 }

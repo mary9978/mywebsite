@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 import { Arrow } from "@/components/icon";
 import { PageIntro, SectionHeading } from "@/components/portfolio-ui";
 import { Reveal } from "@/components/reveal";
@@ -12,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const { locale, about } = await getDictionary();
+  const { locale, about, experience } = await getDictionary();
 
   return (
     <>
@@ -49,22 +50,9 @@ export default async function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="border-y border-ink/10 bg-surface/50 py-24">
-        <div className="page-container">
-          <Reveal>
-            <SectionHeading eyebrow={about.experienceEyebrow} title={about.experienceTitle} />
-          </Reveal>
-          <div className="divide-y divide-ink/10 border-y border-ink/10">
-            {about.experience.map(([date, role, company]) => (
-              <article key={date} className="grid gap-3 py-7 md:grid-cols-[1fr_1.5fr_1fr] md:items-center">
-                <p className="text-sm font-bold text-ink/45">{date}</p>
-                <h3 className="text-xl font-black">{role}</h3>
-                <p className="text-ink/60 md:text-end">{company}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div className="border-y border-ink/10 bg-surface/40">
+        <ExperienceTimeline section={experience} />
+      </div>
 
       <section className="page-container py-24 md:py-32">
         <Reveal>
@@ -75,10 +63,12 @@ export default async function AboutPage() {
           />
         </Reveal>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {about.skills.map((skill) => (
+          {about.skills.map((skill, index) => (
             <li
               className="rounded-full border border-ink/15 px-5 py-4 text-center font-bold"
               dir="ltr"
+              data-aos="flip-up"
+              data-aos-delay={(index % 4) * 100}
               key={skill}
             >
               {skill}

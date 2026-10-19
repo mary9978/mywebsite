@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import { Icon } from "@/components/icon";
 import { PageIntro } from "@/components/portfolio-ui";
 import { Reveal } from "@/components/reveal";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ContactPage() {
-  const { contact } = await getDictionary();
+  const { contact, profile } = await getDictionary();
 
   return (
     <>
@@ -31,6 +32,15 @@ export default async function ContactPage() {
             >
               {site.phone}
             </a>
+            <a
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3 font-black text-on-accent hover:-translate-y-0.5"
+              href={site.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="file" />
+              {profile.resume}
+            </a>
             <dl className="mt-14 space-y-6 border-t border-on-inverse/10 pt-8">
               {contact.details.map(([term, detail]) => (
                 <div key={term}>
@@ -41,7 +51,7 @@ export default async function ContactPage() {
             </dl>
           </aside>
         </Reveal>
-        <Reveal>
+        <Reveal delay={150}>
           <div className="rounded-[2rem] border border-ink/10 bg-surface/60 p-6 md:p-9">
             <h2 className="mb-8 text-2xl font-black">{contact.form.title}</h2>
             <ContactForm text={contact.form} />

@@ -7,5 +7,5 @@ export const site = {
   githubHandle: "maryamrezaeii",
   linkedin: "https://www.linkedin.com/in/maryamrezaeii",
   telegram: "https://t.me/maryamrezaeii",
-  resume: "/resume.pdf",
+  resume: "https://cvbuilder.me/resume/fa/89040e0f-2212-4ef6-ab41-699ed795c56e",
 } as const;
