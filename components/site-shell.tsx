@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BackToTop } from "@/components/back-to-top";
 import { Arrow } from "@/components/icon";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -96,10 +97,13 @@ export async function SiteShell({ children }: SiteShellProps) {
         </div>
       </header>
 
-      <main id="main-content">{children}</main>
+      <main id="main-content" tabIndex={-1} className="outline-none">
+        {children}
+      </main>
+      <BackToTop label={shell.backToTop} />
 
       <footer className="bg-inverse text-on-inverse">
-        <div className="page-container grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="page-container grid gap-10 py-14 md:grid-cols-[1.5fr_1fr_1fr]" data-aos="fade-up">
           <div>
             <p className="mb-4 text-3xl font-black">
               {shell.footerTitle} <span className="text-lime">{shell.footerHighlight}</span>

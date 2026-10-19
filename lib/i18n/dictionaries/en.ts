@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { experienceEn } from "../experience/en";
 import type { Dictionary } from "../types";
 
 export const en: Dictionary = {
@@ -24,6 +25,7 @@ export const en: Dictionary = {
       { path: "/contact", label: "Contact" },
     ],
     themeToggle: "Toggle light and dark mode",
+    backToTop: "Back to top",
     languageName: "فارسی",
     switchLanguage: "Switch language to Persian",
     footerTitle: "Have an idea?",
@@ -37,7 +39,7 @@ export const en: Dictionary = {
     name: "Maryam Rezaeii",
     initials: "MR",
     role: "Frontend Developer",
-    resume: "Download résumé",
+    resume: "View résumé",
     socialLabel: "Social links",
     aboutTitle: "About me",
     about: [
@@ -90,13 +92,6 @@ export const en: Dictionary = {
     storyTitle: "I balance precise design, high performance and maintainable code.",
     storyText: "My focus is the React ecosystem — from project architecture and reusable components to state management, API integration and Core Web Vitals optimisation.",
     storyCta: "Let's get to know each other",
-    experienceEyebrow: "Experience",
-    experienceTitle: "My career path.",
-    experience: [
-      ["2024 — now", "Senior Frontend Developer", "Freelance"],
-      ["2022 — 2024", "React & Next.js Developer", "Product team"],
-      ["2020 — 2022", "UI Developer", "Web studio"],
-    ],
     skillsEyebrow: "Skills",
     skillsTitle: "Modern tools, solid foundations.",
     skillsDescription: "My core expertise is building scalable interfaces with the React ecosystem and modern frontend tooling.",
@@ -153,6 +148,7 @@ export const en: Dictionary = {
       successText: "I'll get back to you within two business days.",
     },
   },
+  experience: experienceEn,
   projects: [
     {
       title: "Peyk",

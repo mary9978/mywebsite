@@ -14,7 +14,7 @@ const paths: Readonly<Record<IconName, string>> = {
   linkedin:
     "M4 4h16v16H4zM8 10v6M8 7.5v.01M12 16v-6M12 13a2.5 2.5 0 015 0v3",
   telegram: "M21 4L3 11l6 2.5M21 4l-3 16-9-6.5M21 4L9 13.5V19l3-3.5",
-  download: "M12 4v11M7 10l5 5 5-5M5 20h14",
+  file: "M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5zM14 3v5h5M9 13h6M9 17h6",
 };
 
 interface IconProps {

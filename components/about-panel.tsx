@@ -7,7 +7,11 @@ export async function AboutPanel() {
   const { locale, profile } = await getDictionary();
 
   return (
-    <div className="card-shadow overflow-hidden rounded-[2rem] bg-surface lg:mt-16">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="150"
+      className="card-shadow overflow-hidden rounded-[2rem] bg-surface lg:mt-16"
+    >
       <section aria-labelledby="about-title" className="p-6 md:p-10">
         <h2 id="about-title" className="text-3xl font-black">
           {profile.aboutTitle}
@@ -33,9 +37,11 @@ export async function AboutPanel() {
           {profile.servicesTitle}
         </h2>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-          {profile.services.map((service) => (
+          {profile.services.map((service, index) => (
             <li
               key={service.title}
+              data-aos="fade-up"
+              data-aos-delay={200 + index * 100}
               className="group flex gap-4 rounded-3xl bg-surface p-5 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-lime text-on-accent transition group-hover:bg-inverse group-hover:text-lime">

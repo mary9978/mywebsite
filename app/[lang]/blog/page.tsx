@@ -19,7 +19,7 @@ export default async function BlogPage() {
       <section className="page-container pb-24 md:pb-32">
         <div className="grid gap-4 md:grid-cols-2">
           {posts.map((post, index) => (
-            <Reveal key={post.title}>
+            <Reveal key={post.title} delay={(index % 2) * 150}>
               <PostCard
                 post={post}
                 href={localizedPath(locale, "/blog")}
@@ -34,11 +34,16 @@ export default async function BlogPage() {
 
       <section className="border-t border-ink/10 bg-surface/50 py-20">
         <div className="page-container grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
+          <div data-aos="fade-up">
             <p className="eyebrow">{blog.newsletterEyebrow}</p>
             <h2 className="text-3xl font-black md:text-5xl">{blog.newsletterTitle}</h2>
           </div>
-          <form className="flex flex-col gap-3 sm:flex-row" aria-label={blog.newsletterForm}>
+          <form
+            className="flex flex-col gap-3 sm:flex-row"
+            aria-label={blog.newsletterForm}
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <label className="sr-only" htmlFor="newsletter-email">
               {blog.emailLabel}
             </label>

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
+import { AosInit } from "@/components/aos-init";
 import { SiteShell } from "@/components/site-shell";
 import { localeDirection, locales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { site } from "@/lib/site";
 import { themeScript } from "@/lib/theme";
+import "aos/dist/aos.css";
 import "../globals.css";
 
 const vazirmatn = Vazirmatn({
@@ -56,6 +58,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       </head>
       <body className="min-h-full">
         <SiteShell>{children}</SiteShell>
+        <AosInit />
       </body>
     </html>
   );

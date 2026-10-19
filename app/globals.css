@@ -167,6 +167,24 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+.hero-grid {
+  --grid-line: color-mix(in srgb, var(--foreground) 7%, transparent);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 30%, transparent 100%);
+}
+
+.hero-glow {
+  filter: blur(90px);
+  animation: drift 16s ease-in-out infinite;
+}
+
+.hero-glow-delayed {
+  animation-delay: -8s;
+}
+
 .project-visual {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -187,12 +205,10 @@ body {
   background: var(--sky);
 }
 
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: reveal-in linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 40%;
-  }
+html:not(.aos-ready) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 @keyframes float {
@@ -205,14 +221,13 @@ body {
   }
 }
 
-@keyframes reveal-in {
-  from {
-    opacity: 0.6;
-    transform: translateY(2rem);
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    transform: translate3d(2.5rem, 1.5rem, 0) scale(1.1);
   }
 }
 
@@ -232,9 +247,5 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .reveal {
-    animation: none;
   }
 }
