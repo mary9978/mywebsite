@@ -114,6 +114,7 @@ export interface Dictionary {
     readonly cta: string;
     readonly nav: readonly NavItem[];
     readonly themeToggle: string;
+    readonly backToTop: string;
     readonly languageName: string;
     readonly switchLanguage: string;
     readonly footerTitle: string;

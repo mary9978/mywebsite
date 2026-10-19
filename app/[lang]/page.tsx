@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AboutPanel } from "@/components/about-panel";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import { HeroBackdrop } from "@/components/hero-backdrop";
 import { PostCard, ProjectCard, SectionHeading } from "@/components/portfolio-ui";
 import { ProfileCard } from "@/components/profile-card";
 import { Reveal } from "@/components/reveal";
@@ -12,7 +13,8 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-12 md:py-16">
+      <section className="relative isolate overflow-hidden py-12 md:py-16">
+        <HeroBackdrop />
         <span className="hero-shape absolute -end-10 top-10 size-40 bg-coral/80" aria-hidden="true" />
         <span className="hero-shape absolute -end-6 top-64 size-28 bg-lime" aria-hidden="true" />
         <div className="page-container relative grid items-start gap-8 lg:grid-cols-[20rem_1fr]">

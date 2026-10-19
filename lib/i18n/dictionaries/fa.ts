@@ -25,6 +25,7 @@ export const fa: Dictionary = {
       { path: "/contact", label: "تماس" },
     ],
     themeToggle: "تغییر حالت روشن و تاریک",
+    backToTop: "بازگشت به بالای صفحه",
     languageName: "English",
     switchLanguage: "تغییر زبان به انگلیسی",
     footerTitle: "ایده‌ای دارید؟",

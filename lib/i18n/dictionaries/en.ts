@@ -25,6 +25,7 @@ export const en: Dictionary = {
       { path: "/contact", label: "Contact" },
     ],
     themeToggle: "Toggle light and dark mode",
+    backToTop: "Back to top",
     languageName: "فارسی",
     switchLanguage: "Switch language to Persian",
     footerTitle: "Have an idea?",
