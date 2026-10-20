@@ -17,11 +17,10 @@ A personal website and portfolio showcasing my skills, projects, and experience 
 
 ## 🛠️ Technologies
 
-- HTML5
-- CSS3
-- JavaScript
-- React / Next.js *(if applicable)*
-- TypeScript *(if applicable)*
+- Next js
+- AOS
+- Tailwind css
+- Responsive Design 
 
 ## 🚀 Getting Started
 
@@ -66,15 +65,15 @@ The project structure depends on the framework and tools used.
 ```text
 personal-portfolio/
 ├── public/
-├── src/
+├── app/
 ├── package.json
 └── README.md
 ```
 
 ## 📬 Contact
 
-- GitHub: [Your GitHub Profile]([YOUR_GITHUB_PROFILE_URL](https://github.com/mary9978))
-- Portfolio: [Visit My Website]([YOUR_DEPLOYED_WEBSITE_UR](https://mywebsite-flame-pi.vercel.app/fa))
+- GitHub: [([YOUR_GITHUB_PROFILE_URL](https://github.com/mary9978))]
+- Portfolio: [([YOUR_DEPLOYED_WEBSITE_UR](https://mywebsite-flame-pi.vercel.app/fa))]
 
 ## 📄 License
 
